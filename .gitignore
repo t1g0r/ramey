@@ -1,4 +1,6 @@
 #config.json
+src/
+backend/
 config.json
 
 # Byte-compiled / optimized / DLL files
