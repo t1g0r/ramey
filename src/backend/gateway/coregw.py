@@ -1,3 +1,9 @@
+import sys,os
+import json
+
+# sys.path.append(os.path.join(os.path.dirname(__file__), '..','..'))
+
+
 class ryCoreGateway(object):
 	"""docstring for ryCoreGateway"""
 	def __init__(self,dbconn,user,pwd):
@@ -6,6 +12,10 @@ class ryCoreGateway(object):
 		self.user = user
 		self.pwd = pwd
 		self.active = False
+
+		with open("../../config.json") as jsonf:
+			self.config = json.load(jsonf)
+
 
 	def connect(self):
 		pass
