@@ -3,6 +3,7 @@ Raspberry Home Security (Just For Fun)
 
 ramey adalah project iseng2 aja, merupakan implementasi IOT untuk pengamanan rumah (simulasi). teknologi yang akan digunakan adalah :
 - Python
+- MongoDB
 - NodeJS (on plan)
 - HTML + CSS + Angular (maybe)
 
@@ -23,6 +24,7 @@ Sistem ini juga akan dilengkapi dengan :
 
 Dalam project ini, memakai beberapa library / framework yaitu :
 - telepot (telegram library for python)
+- PyMongo (library mongodb for python)
 - sailsJS (nodejs framework) -> apabila menggunakan nodejs
 - socket.io (Websocket)
 - ?

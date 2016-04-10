@@ -1,7 +1,8 @@
 import sys
 import os
+import time
+from pymongo import MongoClient
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'libs'))
-sys.path.append(os.path.join(os.path.dirname(__file__), '..','..'))
 from pprint import pprint
 #sys.path.append("../libs/")
 # print sys.path
@@ -16,10 +17,34 @@ class ryTelegramGw(ryCoreGateway):
 	def connect(self):
 		print "token telegram is %s" % self.config["telegram_config"]["token"]
 		bot = telepot.Bot(self.config["telegram_config"]["token"])
+
+		bot.notifyOnMessage(self.onRecMsg)
+
+		self.active = True
+
+		try:
+			while self.active:
+				time.sleep(1000)
+		except KeyboardInterrupt, e:
+			raise e
 		# response = bot.getUpdates()
 		# pprint(response)
 
+	def onMessage(self,userId,msgId,*args):
+		#call inheritance
+		super(ryTelegramGw,self).onMessage(*args)
 
-# bot = ryTelegramGw("satu","dua","tiga")
-#bot.connect()
+		# self.dbconn.inbox.insert({"from":args[0],"msg":args[1],"msg_id":msgId,"type":self.__class__.__name__})
+		print "message id : %s, from : %s, text : %s" % (msgId,args[0],args[1])
+
+	def onRecMsg(self,msg):
+		#pprint(msg)
+		self.onMessage(msg["chat"]["username"],msg["message_id"],msg["from"]["id"],msg["text"])
+
+
+client = MongoClient()
+db = client.ramey
+
+bot = ryTelegramGw(db,"dua","tiga")
+bot.connect()
 		
