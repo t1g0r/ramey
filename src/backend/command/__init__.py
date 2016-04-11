@@ -1,15 +1,5 @@
-import sys,os
-from pymongo import MongoClient
-import LampHandler
-		
+#!/usr/bin/python
 
-class CommandHandler(object):
-	"""docstring for CommandHandler"""
-	def __init__(self, dbconn, command,callback):
-		super(CommandHandler, self).__init__()
-		self.dbconn = dbconn
-		self.command = command
-		callback()
-
-	def execute(self):
-		pass
+from LampHandler import LampHandler
+from CommandBase import CommandBase
+from CommandHandler import CommandHandler as Handler

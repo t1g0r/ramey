@@ -16,15 +16,16 @@ class ryTelegramGw(ryCoreGateway):
 
 	def connect(self):
 		print "token telegram is %s" % self.config["telegram_config"]["token"]
-		bot = telepot.Bot(self.config["telegram_config"]["token"])
+		self.bot = telepot.Bot(self.config["telegram_config"]["token"])
 
-		bot.notifyOnMessage(self.onRecMsg)
+		self.bot.notifyOnMessage(self.onRecMsg)
 
 		self.active = True
 
 		try:
 			while self.active:
-				time.sleep(1000)
+				time.sleep(2.5) #2.5 seconds
+			print "telegram bot is ended."
 		except KeyboardInterrupt, e:
 			raise e
 		# response = bot.getUpdates()
@@ -39,7 +40,10 @@ class ryTelegramGw(ryCoreGateway):
 
 	def onRecMsg(self,msg):
 		#pprint(msg)
-		self.onMessage(msg["chat"]["username"],msg["message_id"],msg["from"]["id"],msg["text"])
+		self.onMessage(msg["chat"].get("username",""),msg["message_id"],msg["from"]["id"],msg["text"])
+
+	def sendMessage(self,to,message):
+		self.bot.sendMessage(to,message)
 
 
 client = MongoClient()

@@ -1,5 +1,5 @@
 import sys
-from commandbase import CommandBase
+from CommandBase import CommandBase
 
 
 class LampHandler(CommandBase):
@@ -7,3 +7,6 @@ class LampHandler(CommandBase):
 	def __init__(self, *args):
 		super(LampHandler, self).__init__(*args)
 		self.args = args
+
+	def execute(self):
+		super(LampHandler,self).execute()
