@@ -2,8 +2,8 @@
 
 Silahkan untuk mengikuti langkah-langkah berikut ini secara berurutan :
 
-1. install [python] (https://www.python.org)
+1. install [python] (https://www.python.org), `gunakan versi 2.7.x`
 2. install [python-pip] (https://pip.pypa.io/en/stable/installing/)
 3. install [mongodb](https://mongodb.org)
-4. install [PyMongo](https://docs.mongodb.org/getting-started/python/client/)
+4. install [PyMongo](https://docs.mongodb.org/getting-started/python/client/) ```pip install pymongo```
 5. jalankan ``` python install.py ```
