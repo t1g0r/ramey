@@ -1,5 +1,119 @@
 from pymongo import MongoClient
 
 
+client = MongoClient()
+db = client.ramey
 
-print "under construction"
+print "Ramey Instalation"
+print "========================"
+
+print "installing db data.."
+
+#create default users
+db.users.insert([
+	{
+		"_id":"ramey",
+		"userid":"ramey",
+		"pwd":"0558d3dd05c436844318664582ec1d08",
+		"fullname":"Ramey",
+		"active":1
+	},
+	{
+		"_id":"tigor",
+		"userid":"tigor",
+		"pwd":"0558d3dd05c436844318664582ec1d08",
+		"fullname":"Tigor Mangatur Manurung",
+		"active":1
+	},
+	])
+
+#user_account
+db.users_account.insert([
+	{
+		"userid":"ramey",
+		"account_alias":"username",
+		"type":"telegram",
+		"active":1
+	}
+	])
+
+
+#command mapper
+db.commandmapper.insert([
+	{
+		"_id":"ceklamp",
+		"commandkey":"ceklamp",
+		"commandname":"Cek Lampu",
+		"class_ref":"LampHandler",
+		"gpios":"1"
+	},
+	{
+		"_id":"hidupkanlampu",
+		"commandkey":"hidupkanlampu",
+		"commandname":"Hidupkan Lampu",
+		"class_ref":"LampHandler",
+		"gpios":"1"
+	},
+	{
+		"_id":"matikanlampu",
+		"commandkey":"matikanlampu",
+		"commandname":"Matikan Lampu",
+		"class_ref":"LampHandler",
+		"gpios":"1"
+	},
+	{
+		"_id":"bunyikanbuzzer",
+		"commandkey":"bunyikanbuzzer",
+		"commandname":"Bunyikan Buzzer",
+		"class_ref":"BuzzerHandler",
+		"gpios":"3"
+	},
+	{
+		"_id":"fotodong",
+		"commandkey":"fotodong",
+		"commandname":"Ambil Foto",
+		"class_ref":"CameraHandler"
+	},
+	{
+		"_id":"daftarid",
+		"commandkey":"daftarid",
+		"commandname":"Pendaftaran Kartu Akses",
+		"class_ref":"CardHandler"
+	},
+	{
+		"_id":"lepasid",
+		"commandkey":"lepasid",
+		"commandname":"Pelepasan Kartu Akses",
+		"class_ref":"CardHandler"
+	},
+	{
+		"_id":"hidupkansensor",
+		"commandkey":"hidupkansensor",
+		"commandname":"Hidupkan Sensor",
+		"class_ref":"MotionHandler"
+	},
+	{
+		"_id":"matikansensor",
+		"commandkey":"matikansensor",
+		"commandname":"Matikan Sensor",
+		"class_ref":"MotionHandler"
+	},
+	{
+		"_id":"ceksemua",
+		"commandkey":"ceksemua",
+		"commandname":"Cek Alarm",
+		"class_ref":"CheckHandler"
+	}
+	])
+
+#params 
+db.params.insert([
+	{
+		"_id":"needauth",
+		"value":1
+	}
+	])
+
+print "db data OK"
+
+print "Done."

@@ -31,19 +31,37 @@ class ryTelegramGw(ryCoreGateway):
 		# response = bot.getUpdates()
 		# pprint(response)
 
-	def onMessage(self,userId,msgId,*args):
+	def onMessage(self,*args):
 		#call inheritance
 		super(ryTelegramGw,self).onMessage(*args)
 
+		param = args[0]
 		# self.dbconn.inbox.insert({"from":args[0],"msg":args[1],"msg_id":msgId,"type":self.__class__.__name__})
-		print "message id : %s, from : %s, text : %s" % (msgId,args[0],args[1])
+		print "message id : %s, from : %s, text : %s" % (param["message_id"],param["account_id"],param["message"])
 
 	def onRecMsg(self,msg):
-		#pprint(msg)
-		self.onMessage(msg["chat"].get("username",""),msg["message_id"],msg["from"]["id"],msg["text"])
+		# pprint(msg)
+		params = {}
+		params["account_id"] = msg["from"]["id"]
+		if "text" in msg:
+			params["message"] = msg["text"]
+		else:
+			params["message"] = ""
+		params["firstname"] = msg["chat"]["first_name"]
+		params["lastname"] = msg["chat"]["last_name"]
+		params["account_name"] = msg["chat"].get("username","")
+		params["message_id"] = msg["message_id"]
+
+		self.onMessage(params)
 
 	def sendMessage(self,to,message):
 		self.bot.sendMessage(to,message)
+
+	def sendPhoto(self,to,filepath):
+		super(ryTelegramGw,self).sendPhoto(to,filepath)
+		f = open(filepath,"rb")
+		self.bot.sendPhoto(to,f)
+		pass
 
 
 client = MongoClient()
