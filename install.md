@@ -1,4 +1,4 @@
-# HOW TO INSTALL
+# CARA INSTALASI
 
 Silahkan untuk mengikuti langkah-langkah berikut ini secara berurutan :
 
