@@ -9,6 +9,7 @@ print "========================"
 
 print "installing db data.."
 
+print "- table users"
 #create default users
 db.users.insert([
 	{
@@ -27,6 +28,7 @@ db.users.insert([
 	},
 	])
 
+print "- table users_account"
 #user_account
 db.users_account.insert([
 	{
@@ -37,7 +39,7 @@ db.users_account.insert([
 	}
 	])
 
-
+print "- command mapper"
 #command mapper
 db.commandmapper.insert([
 	{
@@ -106,6 +108,7 @@ db.commandmapper.insert([
 	}
 	])
 
+print "- table parameter"
 #params 
 db.params.insert([
 	{
