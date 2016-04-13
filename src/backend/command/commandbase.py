@@ -12,3 +12,6 @@ class CommandBase(object):
 
 	def onFailed(self):
 		pass
+
+	def SelfCheck(self):
+		pass
