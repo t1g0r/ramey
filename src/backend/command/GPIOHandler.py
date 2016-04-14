@@ -12,7 +12,7 @@ class GPIOHandler(object):
 		self.params = params
 		#initiate gpio
 		gpio.setwarnings(False)
-		gpio.setmode(GPIO.BOARD)
+		gpio.setmode(gpio.BOARD)
 		gpio_setup = "out" if params==None else params["gpio_setup"]
 
 		if pins != None:
