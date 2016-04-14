@@ -1,7 +1,7 @@
 import sys
 from CommandBase import CommandBase
 from pprint import pprint
-import GPIOHandler.GPIOHandler
+from GPIOHandler import GPIOHandler
 
 
 class LampHandler(CommandBase):
