@@ -25,6 +25,9 @@ class CommandHandler(object):
 		
 	def execute(self):
 		commandstr = self.command["message"][1:]
+		if " " in commandstr:
+			commandstr = commandstr[:commandstr.find(" ")]
+		print "Command : '%s'" % commandstr
 		cCommand = self.dbconn.commandmapper.find({"commandkey":commandstr}).limit(1)
 
 		#if commmand is not found, then send response

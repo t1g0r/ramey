@@ -13,7 +13,7 @@ class GPIOHandler(object):
 		#initiate gpio
 		gpio.setwarnings(False)
 		gpio.setmode(GPIO.BOARD)
-		gpio_setup = "out" if params==None else "in"
+		gpio_setup = "out" if params==None else params["gpio_setup"]
 
 		if pins != None:
 			for i in pins:
@@ -23,8 +23,8 @@ class GPIOHandler(object):
 					gpio.setup(i,gpio.OUT)
 
 
-	def CheckStatus(self):
-		pass
+	def CheckStatus(self,pin=False):
+		return gpio.input(pin)
 
 	def SetPin(self,pin=None,value=True,setupmode=None):
 		if (pin != None) & (self.pins == None):
@@ -34,9 +34,13 @@ class GPIOHandler(object):
 		else:
 			for i in self.pins:
 				gpio.output(i,value)
+		return self.gpio
 
 	def SetTrueThenFalse(self,delaytime):
 		self.SetPin(value=True)
 		time.sleep(delaytime)
-		self.SetPin(value=False)
+		return self.SetPin(value=False)
+
+	def Clean(self,pin=None):
+		gpio.cleanup()
 
