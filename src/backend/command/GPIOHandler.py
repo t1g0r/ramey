@@ -18,9 +18,9 @@ class GPIOHandler(object):
 		if pins != None:
 			for i in pins:
 				if gpio_setup=="in":
-					gpio.setup(i,gpio.IN)
+					gpio.setup(int(i),gpio.IN)
 				else:
-					gpio.setup(i,gpio.OUT)
+					gpio.setup(int(i),gpio.OUT)
 
 
 	def CheckStatus(self,pin=False):
@@ -33,7 +33,7 @@ class GPIOHandler(object):
 			gpio.output(pin,value)
 		else:
 			for i in self.pins:
-				gpio.output(i,value)
+				gpio.output(int(i),value)
 		return self.gpio
 
 	def SetTrueThenFalse(self,delaytime):
