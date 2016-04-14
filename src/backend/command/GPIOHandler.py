@@ -34,7 +34,7 @@ class GPIOHandler(object):
 		else:
 			for i in self.pins:
 				gpio.output(int(i),value)
-		return self.gpio
+		return gpio
 
 	def SetTrueThenFalse(self,delaytime):
 		self.SetPin(value=True)
