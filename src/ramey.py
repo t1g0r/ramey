@@ -9,6 +9,7 @@ import json
 with open("config.json") as jsonf:
 	config = json.load(jsonf)
 
+config["ROOTPATH"] = "/Users/tigormanurung/Documents/WORKS/JLS/ramey/"
 client = MongoClient()
 db = client.ramey
 

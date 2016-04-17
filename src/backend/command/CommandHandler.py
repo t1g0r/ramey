@@ -13,8 +13,8 @@ class CommandHandler(object):
 		self.dbconn = dbconn
 		self.command = command
 		self.params = {}
-		self.params["callback"] = callback
-		self.params["callback2"] = callback2
+		self.params["callback"] = command["sendmessage"] #callback
+		self.params["callback2"] = command["sendphoto"] #callback2
 		self.params["command"] = self.command
 
 		self.callback = callback
