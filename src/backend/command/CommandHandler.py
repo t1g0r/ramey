@@ -34,7 +34,7 @@ class CommandHandler(object):
 		#if commmand is not found, then send response
 		if cCommand.count() > 0:
 			cCommand = cCommand[0]
-			self.callback(self.command["account_id"],"hii %s, you just sent command name : '%s' and this is callback!" % (self.command["fullname"],cCommand["commandname"]))
+			self.params["callback"](self.command["account_id"],"hii %s, you just sent command name : '%s' and this is callback!" % (self.command["fullname"],cCommand["commandname"]))
 
 			try:
 				#execute command
