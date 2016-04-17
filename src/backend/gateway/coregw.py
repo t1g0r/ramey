@@ -45,7 +45,7 @@ class ryCoreGateway(object):
 
 		users = self.dbconn.users.find({"active":1},{"userid":1,"_id":0})
 		for user in users:
-			users_account = self.dbconn.users_account.find({"type":"%s" % self.name,"userid":{"$in":[user["userid"]]}})
+			users_account = self.dbconn.users_account.find({"active":1,"type":"%s" % self.name,"userid":{"$in":[user["userid"]]}})
 			for account in users_account:
 				self.sendMessage(account["account_id"], Parameter.getValue(self.dbconn,"alarm_message"))
 
@@ -76,7 +76,6 @@ class ryCoreGateway(object):
 			],
 			"active" : 1
 			})
-		# cursor = self.dbconn.users_account.find({"account_id":"%s"%fromWho,"active":1})
 		if cursor.count() > 0:
 			#cek jika account_id kosong, maka diisi
 			if cursor[0].get("account_id","") == "":
