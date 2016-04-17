@@ -3,7 +3,7 @@ from pymongo import MongoClient
 import importlib
 import SwitchHandler
 import CameraHandler
-import MotionHandler
+import SensorHandler
 from pprint import pprint
 
 
