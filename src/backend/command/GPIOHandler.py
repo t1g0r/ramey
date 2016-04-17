@@ -22,13 +22,13 @@ class GPIOHandler(object):
 				else:
 					gpio.setup(int(i),gpio.OUT,pull_up_down=pull_up_down)
 
-	def Add_Event_Handler(self,gpiosetup,bouncetime,callback,pin=None):
+	def Add_Event_Handler(self,gpiosetup,bounce_time,callback,pin=None):
 		if (pin != None) & (self.pins == None):
 			#new setup first
-			gpio.add_event_detect(pin,gpiosetup,callback=callback,bouncetime=bouncetime)
+			gpio.add_event_detect(pin,gpiosetup,callback=callback,bouncetime=bounce_time)
 		else:
 			for i in self.pins:
-				gpio.add_event_detect(int(i),gpiosetup,callback=callback,bouncetime=bouncetime)
+				gpio.add_event_detect(int(i),gpiosetup,callback=callback,bouncetime=bounce_time)
 
 	def CheckStatus(self,pin=False):
 		return gpio.input(pin)
