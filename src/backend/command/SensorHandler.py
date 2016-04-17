@@ -11,7 +11,7 @@ class SensorHandler(CommandBase):
 		# self.arg = arg
 
 	def execute(self):
-		super(SwitchHandler,self).execute()
+		super(SensorHandler,self).execute()
 		method = getattr(self,self.params["method"])
 		method()
 
