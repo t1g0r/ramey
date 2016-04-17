@@ -12,8 +12,8 @@ class CommandBase(object):
 		self.messageStr = self.params["command"]["message"][1:]
 		self.AppConfig = self.params["command"]["AppConfig"]
 		self.sensor = self.params["command"]["sensor"]
-		self.callback = self.params["command"]["callback"]
-		self.callback2 = self.params["command"]["callback2"]
+		self.callback = self.params["callback"]
+		self.callback2 = self.params["callback2"]
 
 		if " " in self.messageStr:
 			#get param
