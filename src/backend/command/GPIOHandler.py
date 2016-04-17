@@ -10,7 +10,6 @@ class GPIOHandler(object):
 		super(GPIOHandler, self).__init__()
 		self.pins = pins
 		self.params = params
-		self.bounce_time = bounce_time
 		#initiate gpio
 		gpio.setwarnings(False)
 		gpio.setmode(gpio.BCM)
