@@ -46,65 +46,65 @@ db.commandmapper.insert([
 		"_id":"ceklamp",
 		"commandkey":"ceklamp",
 		"commandname":"Cek Lampu",
-		"class_ref":"LampHandler",
+		"class_ref":"LampHandler.ceklamp",
 		"gpios":"1"
 	},
 	{
 		"_id":"hidupkanlampu",
 		"commandkey":"hidupkanlampu",
 		"commandname":"Hidupkan Lampu",
-		"class_ref":"LampHandler",
+		"class_ref":"LampHandler.hidupkanlampu",
 		"gpios":"1"
 	},
 	{
 		"_id":"matikanlampu",
 		"commandkey":"matikanlampu",
 		"commandname":"Matikan Lampu",
-		"class_ref":"LampHandler",
+		"class_ref":"LampHandler.matikanlampu",
 		"gpios":"1"
 	},
 	{
 		"_id":"bunyikanbuzzer",
 		"commandkey":"bunyikanbuzzer",
 		"commandname":"Bunyikan Buzzer",
-		"class_ref":"BuzzerHandler",
+		"class_ref":"BuzzerHandler.bunyikanbuzzer",
 		"gpios":"3"
 	},
 	{
 		"_id":"fotodong",
 		"commandkey":"fotodong",
 		"commandname":"Ambil Foto",
-		"class_ref":"CameraHandler"
+		"class_ref":"CameraHandler.fotodong"
 	},
 	{
 		"_id":"daftarid",
 		"commandkey":"daftarid",
 		"commandname":"Pendaftaran Kartu Akses",
-		"class_ref":"CardHandler"
+		"class_ref":"CardHandler.daftarid"
 	},
 	{
 		"_id":"lepasid",
 		"commandkey":"lepasid",
 		"commandname":"Pelepasan Kartu Akses",
-		"class_ref":"CardHandler"
+		"class_ref":"CardHandler.lepasid"
 	},
 	{
 		"_id":"hidupkansensor",
 		"commandkey":"hidupkansensor",
 		"commandname":"Hidupkan Sensor",
-		"class_ref":"MotionHandler"
+		"class_ref":"MotionHandler.hidupkansensor"
 	},
 	{
 		"_id":"matikansensor",
 		"commandkey":"matikansensor",
 		"commandname":"Matikan Sensor",
-		"class_ref":"MotionHandler"
+		"class_ref":"MotionHandler.matikansensor"
 	},
 	{
 		"_id":"ceksemua",
 		"commandkey":"ceksemua",
 		"commandname":"Cek Alarm",
-		"class_ref":"CheckHandler"
+		"class_ref":"CheckHandler.ceksemua"
 	}
 	])
 

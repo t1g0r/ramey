@@ -32,7 +32,7 @@ class ryTelegramGw(ryCoreGateway):
 		# pprint(response)
 
 	def onMessage(self,*args):
-		#call inheritance
+		#call innitance
 		super(ryTelegramGw,self).onMessage(*args)
 
 		param = args[0]

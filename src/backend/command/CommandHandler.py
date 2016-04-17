@@ -27,29 +27,36 @@ class CommandHandler(object):
 		commandstr = self.command["message"][1:]
 		if " " in commandstr:
 			commandstr = commandstr[:commandstr.find(" ")]
-		print "Command : '%s'" % commandstr
+		# print "Command : '%s'" % commandstr
+		print "get from db"
 		cCommand = self.dbconn.commandmapper.find({"commandkey":commandstr}).limit(1)
-
+		print "get db selesai"
 		#if commmand is not found, then send response
 		if cCommand.count() > 0:
 			cCommand = cCommand[0]
-			# print cCommand.count()
 			self.callback(self.command["account_id"],"hii %s, you just sent command name : '%s' and this is callback!" % (self.command["fullname"],cCommand["commandname"]))
 
 			try:
 				#execute command
 				#get package
-				module = eval(cCommand["class_ref"])
+				self.modules = cCommand["class_ref"].split(".")
 
+				#fill params
+				self.params["class"] = self.modules[0]
+				self.params["method"] = self.modules[1]
+				self.params["id"] = cCommand["_id"]
+
+				# module = sys.modules[self.modules[0]]
+				# pprint(module)
+				module = eval(self.modules[0])
 				#get class
-				class_ = getattr(module, cCommand["class_ref"])
-
+				class_ = getattr(module, self.modules[0])
 				#init
 				instance = class_(self.dbconn,self.params)
-
 				#exec
 				instance.execute()
 			except Exception, e:
 				self.callback(self.command["account_id"],"Unhandled Command [%s]" % e)
+				raise e
 		else:
 			self.callback(self.command["account_id"],"Unknown Command.")
