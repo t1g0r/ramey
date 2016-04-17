@@ -5,9 +5,9 @@ from GPIOHandler import GPIOHandler
 
 
 class SwitchHandler(CommandBase):
-	"""docstring for LampHandler"""
+	"""docstring for SwitchHandler"""
 	def __init__(self, *args):
-		super(LampHandler, self).__init__(*args)
+		super(SwitchHandler, self).__init__(*args)
 		params = {}
 		params["gpio_setup"] = "out"
 		self.ghandler = GPIOHandler(self.Pins,params)
@@ -15,7 +15,7 @@ class SwitchHandler(CommandBase):
 		
 
 	def execute(self):
-		super(LampHandler,self).execute()
+		super(SwitchHandler,self).execute()
 		method = getattr(self,self.params["method"])
 		method()
 
