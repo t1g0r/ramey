@@ -8,7 +8,7 @@ from pprint import pprint
 
 class CommandHandler(object):
 	"""docstring for CommandHandler"""
-	def __init__(self, dbconn, command,callback,callback2):
+	def __init__(self, dbconn, command):
 		super(CommandHandler, self).__init__()
 		self.dbconn = dbconn
 		self.command = command
