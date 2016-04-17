@@ -20,7 +20,7 @@ counter=0
 
 try:
 	while True:
-		sleep(1)
+		time.sleep(1)
 
 finally:
 	gpio.cleanup()
