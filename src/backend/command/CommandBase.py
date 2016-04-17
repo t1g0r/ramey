@@ -7,6 +7,7 @@ class CommandBase(object):
 		print "command base"
 		self.dbconn = dbconn
 		self.params = args
+		pprint(self.params)
 
 		self.messageStr = self.params["command"]["message"][1:]
 
