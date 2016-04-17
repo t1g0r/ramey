@@ -17,6 +17,8 @@ class SensorHandler(CommandBase):
 
 	def switchon(self):
 		self.sensor.active=True
+		self.callback("Sensor telah dihidupkan!")
 
 	def switchoff(self):
 		self.sensor.active=False
+		self.callback("Sensor telah dimatikan!")
