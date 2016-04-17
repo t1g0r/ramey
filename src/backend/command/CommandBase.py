@@ -11,6 +11,7 @@ class CommandBase(object):
 
 		self.messageStr = self.params["command"]["message"][1:]
 		self.AppConfig = self.params["command"]["AppConfig"]
+		self.sensor = self.params["command"]["sensor"]
 
 		if " " in self.messageStr:
 			#get param

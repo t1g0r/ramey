@@ -101,6 +101,7 @@ class ryCoreGateway(object):
 				params["sendmessage"] = self.sendMessage
 				params["sendphoto"] = self.sendPhoto
 				params["AppConfig"] = self.config
+				params["sensor"] = self.sensor
 				cmHandler = Handler(self.dbconn,params)
 				cmHandler.execute()
 				# self.disconnect()
