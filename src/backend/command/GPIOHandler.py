@@ -6,7 +6,7 @@ import time
 
 class GPIOHandler(object):
 	"""docstring for GPIOHandler"""
-	def __init__(self, pins=None, params=None, pull_up_down=None):
+	def __init__(self, pins=None, params=None, pull_up_down=0):
 		super(GPIOHandler, self).__init__()
 		self.pins = pins
 		self.params = params
@@ -20,7 +20,7 @@ class GPIOHandler(object):
 				if gpio_setup=="in":
 					gpio.setup(int(i),gpio.IN,pull_up_down=pull_up_down)
 				else:
-					gpio.setup(i,gpio.OUT,pull_up_down=pull_up_down)
+					gpio.setup(int(i),gpio.OUT,pull_up_down=pull_up_down)
 
 	def Add_Event_Handler(self,gpiosetup,bounce_time,callback,pin=None):
 		if (pin != None) & (self.pins == None):
