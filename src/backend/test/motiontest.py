@@ -5,7 +5,7 @@ gpio.setmode(gpio.BCM)
 
 
 
-gpio.setup(21,GPIO.IN,pull_up_down=gpio.PUD_DOWN)
+gpio.setup(21,gpio.IN,pull_up_down=gpio.PUD_DOWN)
 
 def motionSensor(channel):
 	if gpio.input(21):
