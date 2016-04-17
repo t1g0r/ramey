@@ -39,8 +39,8 @@ class ryCoreGateway(object):
 		pass
 
 	def onMotion(self):
-		users = self.dbconn.users.find({"active":1},{"userid":1})
-		users_account = self.dbconn.users_account.find({"type":"%s"%self.name,"userid":{"$in":users.userid}})
+		# users = self.dbconn.users.find({"active":1},{"userid":1})
+		# users_account = self.dbconn.users_account.find({"type":"%s"%self.name,"userid":{"$in":users["userid"]}})
 
 		users = db.users.find({"active":1},{"userid":1,"_id":0})
 		for user in users:
