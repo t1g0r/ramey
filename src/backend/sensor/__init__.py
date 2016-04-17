@@ -19,7 +19,9 @@ class MotionSensor(object):
 		self.dbconn = config["dbconn"]
 		self.params["gpio_setup"] = "in"
 		self.ghandler = GPIOHandler([self.Pin],self.params,gpio.PUD_DOWN)
-		self.ghandler.Add_Event_Handler(self.Pin,gpio.BOTH,callback=self.OnMotion,bounce_time=50)
+
+		self.ghandler.Add_Event_Handler(pin=self.Pin,gpiosetup=gpio.BOTH,callback=self.OnMotion,bounce_time=50)
+
 		buzzerpin = Parameter.getValuebyFieldname(self.db,"sensor_motion","buzzer").split(",")
 		params["gpio_setup"] = "out"
 		self.buzzerHandler = GPIOHandler([buzzerpin],params)
