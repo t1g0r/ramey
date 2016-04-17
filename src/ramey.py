@@ -18,11 +18,11 @@ client = MongoClient()
 db = client.ramey
 
 
-# config = {}
-cfg["pin"] = Parameter.getValue(db,"sensor_motion")
-cfg["dbconn"] = db
-motion = MotionSensor(cfg)
-utils.newThread(motion.Execute)
+# # config = {}
+# cfg["pin"] = Parameter.getValue(db,"sensor_motion")
+# cfg["dbconn"] = db
+# motion = MotionSensor(cfg)
+# utils.newThread(motion.Execute)
 
 cfg["name"] = "telegram"
 bot = ryTelegramGw(config=cfg,dbconn=db,sensor=motion)
