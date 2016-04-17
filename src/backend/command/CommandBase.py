@@ -10,6 +10,7 @@ class CommandBase(object):
 		pprint(self.params)
 
 		self.messageStr = self.params["command"]["message"][1:]
+		self.AppConfig = self.params["command"]["AppConfig"]
 
 		if " " in self.messageStr:
 			#get param

@@ -12,6 +12,6 @@ class CameraHandler(CommandBase):
 	def execute(self):
 		super(CameraHandler,self).execute()
 		#sample pic
-		strPath = 'res/chart.png';
+		strPath = self.AppConfig["ROOTPATH"] + 'res/chart.png';
 		print "Sending Photo.."
 		self.args[1]["callback2"](self.args[1]["command"]["account_id"],strPath)
