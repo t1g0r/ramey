@@ -19,9 +19,9 @@ db = client.ramey
 
 
 # # config = {}
-# cfg["pin"] = Parameter.getValue(db,"sensor_motion")
-# cfg["dbconn"] = db
-# motion = MotionSensor(cfg)
+cfg["pin"] = Parameter.getValue(db,"sensor_motion")
+cfg["dbconn"] = db
+motion = MotionSensor(cfg)
 # utils.newThread(motion.Execute)
 
 cfg["name"] = "telegram"
