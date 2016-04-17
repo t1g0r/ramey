@@ -19,9 +19,11 @@ class ryCoreGateway(object):
 		self.active = False
 		self.sensor = sensor
 		self.sensor.AddCallback(self.onMotion)
-		self.name = self.config["name"]
 
 		self.config = config
+		self.name = self.config["name"]
+
+		
 
 		
 	def connect(self):
