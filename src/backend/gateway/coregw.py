@@ -12,7 +12,7 @@ from pprint import pprint
 
 class ryCoreGateway(object):
 	"""docstring for ryCoreGateway"""
-	def __init__(self,config,dbconn,user=None,pwd=None,sensor=None):
+	def __init__(self,config=None,dbconn=None,user=None,pwd=None,sensor=None):
 		self.dbconn = dbconn
 		self.user = user
 		self.pwd = pwd
