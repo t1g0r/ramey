@@ -12,5 +12,5 @@ with open("config.json") as jsonf:
 client = MongoClient()
 db = client.ramey
 
-bot = ryTelegramGw(config=config,dbconn=db)
+bot = ryTelegramGw(config,db)
 bot.connect()
