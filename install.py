@@ -91,13 +91,17 @@ db.commandmapper.insert([
 	{
 		"_id":"hidupkansensor",
 		"commandkey":"hidupkansensor",
-		"commandname":"Hidupkan Sensor",
+		"commandname":"Hidupkan Sensor",		
+    "gpios":"20",
+    "buzzer":"25",
 		"class_ref":"MotionHandler.hidupkansensor"
 	},
 	{
 		"_id":"matikansensor",
 		"commandkey":"matikansensor",
-		"commandname":"Matikan Sensor",
+		"commandname":"Matikan Sensor",		
+    "gpios":"20",
+    "buzzer":"25",
 		"class_ref":"MotionHandler.matikansensor"
 	},
 	{
