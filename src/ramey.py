@@ -12,18 +12,18 @@ from sensor import MotionSensor
 import json
 
 with open("config.json") as jsonf:
-	config = json.load(jsonf)
+	cfg = json.load(jsonf)
 
 client = MongoClient()
 db = client.ramey
 
 
 # config = {}
-config["pin"] = Parameter.getValue(db,"sensor_motion")
-config["dbconn"] = db
-motion = MotionSensor(config)
+cfg["pin"] = Parameter.getValue(db,"sensor_motion")
+cfg["dbconn"] = db
+motion = MotionSensor(cfg)
 utils.newThread(motion.Execute)
 
-config["name"] = "telegram"
-bot = ryTelegramGw(config=config,dbconn=db,sensor=motion)
+cfg["name"] = "telegram"
+bot = ryTelegramGw(config=cfg,dbconn=db,sensor=motion)
 bot.connect()
