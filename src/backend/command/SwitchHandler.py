@@ -2,6 +2,7 @@ import sys
 from CommandBase import CommandBase
 from pprint import pprint
 from GPIOHandler import GPIOHandler
+import time
 
 
 class SwitchHandler(CommandBase):
@@ -26,4 +27,10 @@ class SwitchHandler(CommandBase):
 
 	def switchoff(self):
 		print "matikan lampu"
+		self.ghandler.SetPin(value=False)
+
+	def echo(self):
+		print "Test Echo"
+		self.ghandler.SetPin(value=True)
+		time.sleep(2)
 		self.ghandler.SetPin(value=False)
