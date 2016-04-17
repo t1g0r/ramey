@@ -40,5 +40,5 @@ class SwitchHandler(CommandBase):
 		self.dip(.1,.1)
 		self.dip(.1,.1)
 		self.dip(.1,.1)
-		self.dip(.2,.2)
+		self.dip(.5,.1)
 		self.dip(.5,.5)
