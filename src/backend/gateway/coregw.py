@@ -42,9 +42,9 @@ class ryCoreGateway(object):
 		# users = self.dbconn.users.find({"active":1},{"userid":1})
 		# users_account = self.dbconn.users_account.find({"type":"%s"%self.name,"userid":{"$in":users["userid"]}})
 
-		users = db.users.find({"active":1},{"userid":1,"_id":0})
+		users = self.dbconn.users.find({"active":1},{"userid":1,"_id":0})
 		for user in users:
-			users_account = db.users_account.find({"type":"%s" % self.name,"userid":{"$in":[user["userid"]]}})
+			users_account = self.dbconn.users_account.find({"type":"%s" % self.name,"userid":{"$in":[user["userid"]]}})
 			for account in users_account:
 				self.sendMessage(account["account_id"], "test message")
 
