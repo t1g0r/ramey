@@ -52,9 +52,9 @@ fi
 
 # $msg = {$MESSAGE}
 
-echo "Commiting to git.."
-sudo git add -A
-sudo git commit -m "${MESSAGE}"
-echo "Push.."
-sudo git push https://${USERNAME}:${PASSWORD}@github.com/t1g0r/ramey.git --all
+echo "- Commiting to git.."
+git add -A
+git commit -m "${MESSAGE}"
+echo "- Pushing to git.."
+git push https://${USERNAME}:${PASSWORD}@github.com/t1g0r/ramey.git --all
 echo "Done."
