@@ -12,14 +12,15 @@ from pprint import pprint
 
 class ryCoreGateway(object):
 	"""docstring for ryCoreGateway"""
-	def __init__(self,dbconn,user,pwd):
+	def __init__(self,config,dbconn,user,pwd):
 		self.dbconn = dbconn
 		self.user = user
 		self.pwd = pwd
 		self.active = False
 
-		with open("../../config.json") as jsonf:
-			self.config = json.load(jsonf)
+		self.config = config
+		
+		
 
 
 	def connect(self):

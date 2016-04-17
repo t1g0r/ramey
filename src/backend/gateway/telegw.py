@@ -62,11 +62,4 @@ class ryTelegramGw(ryCoreGateway):
 		f = open(filepath,"rb")
 		self.bot.sendPhoto(to,f)
 		pass
-
-
-client = MongoClient()
-db = client.ramey
-
-bot = ryTelegramGw(db,"dua","tiga")
-bot.connect()
 		
