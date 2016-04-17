@@ -25,7 +25,7 @@ class MotionSensor(object):
 		buzzerpin = Parameter.getValuebyFieldname(self.dbconn,"sensor_motion","buzzer")
 		print buzzerpin
 		self.params["gpio_setup"] = "out"
-		self.buzzerHandler = GPIOHandler([buzzerpin],params)
+		self.buzzerHandler = GPIOHandler([buzzerpin],self.params)
 
 	def OnMotion(self,channel):
 		if (gpio.input(self.Pin)) and (self.active):
