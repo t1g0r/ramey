@@ -45,7 +45,7 @@ class MotionSensor(object):
 				print "Error happened!"
 
 	def AddCallback(self,callback):
-		self.callback[counter] = callback
+		self.callback[self.counter] = callback
 		self.counter += 1
 
 	def test(self):
