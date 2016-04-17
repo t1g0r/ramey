@@ -8,6 +8,7 @@ class GPIOHandler(object):
 	"""docstring for GPIOHandler"""
 	def __init__(self, pins=None, params=None, pull_up_down=None):
 		super(GPIOHandler, self).__init__()
+		print(self.pins)
 		self.pins = pins
 		self.params = params
 		#initiate gpio
