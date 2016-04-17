@@ -1,4 +1,5 @@
 import RPi.GPIO as gpio
+import time
 
 gpio.setwarnings(False)
 gpio.setmode(gpio.BCM)
