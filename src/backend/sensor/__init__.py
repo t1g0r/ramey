@@ -30,7 +30,7 @@ class MotionSensor(object):
 		self.buzzerHandler = GPIOHandler(buzzerpin.split(","),self.params)
 
 	def OnMotion(self,channel):
-		if ((gpio.input(self.Pin)) and (self.active)):
+		if ((gpio.input(int(self.Pin))) and (self.active)):
 			self.buzzerHandler.echo()
 			if len(self.callback) > 0:
 				for call in self.callback:
