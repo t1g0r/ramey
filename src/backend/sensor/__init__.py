@@ -4,6 +4,7 @@ import time
 from GPIOHandler import GPIOHandler
 import RPi.GPIO as gpio
 from utils import Parameter
+from pprint import pprint
 
 
 class MotionSensor(object):
@@ -25,6 +26,7 @@ class MotionSensor(object):
 		buzzerpin = Parameter.getValuebyFieldname(self.dbconn,"sensor_motion","buzzer")
 		# print buzzerpin
 		self.params["gpio_setup"] = "out"
+		pprint(buzzerpin.split(","))
 		self.buzzerHandler = GPIOHandler(buzzerpin.split(","),self.params)
 
 	def OnMotion(self,channel):
