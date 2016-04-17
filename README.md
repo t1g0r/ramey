@@ -31,7 +31,8 @@ Dalam project ini, memakai beberapa library / framework yaitu :
 
 - ?
 
-
-ingin benar-benar alat yang bisa diterapkan dirumah anda? hubungi saya di tigor@tigorworks.com :)
+```sh
+$ ingin benar-benar alat yang bisa diterapkan dirumah anda? hubungi saya di tigor@tigorworks.com :)
+```
 
 **by Tigor Mangatur Manurung**
