@@ -21,9 +21,9 @@ class LampHandler(CommandBase):
 
 	def hidupkanlampu(self):
 		print "hidupkan lampu"
-		# self.ghandler.SetPin(value=True)
+		self.ghandler.SetPin(value=True)
 
 
 	def matikanlampu(self):
 		print "matikan lampu"
-		# self.ghandler.SetPin(value=False)
+		self.ghandler.SetPin(value=False)

@@ -12,14 +12,14 @@ from pprint import pprint
 
 class ryCoreGateway(object):
 	"""docstring for ryCoreGateway"""
-	def __init__(self,config,dbconn,user,pwd):
+	def __init__(self,config,dbconn,user=None,pwd=None):
 		self.dbconn = dbconn
 		self.user = user
 		self.pwd = pwd
 		self.active = False
 
 		self.config = config
-		
+
 		
 
 
