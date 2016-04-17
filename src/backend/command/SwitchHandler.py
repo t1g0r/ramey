@@ -29,21 +29,15 @@ class SwitchHandler(CommandBase):
 		print "matikan lampu"
 		self.ghandler.SetPin(value=False)
 
+	def dip(echo,seconds):
+		self.ghandler.SetPin(value=True)
+		time.sleep(seconds)
+		self.ghandler.SetPin(value=False)
+
 	def echo(self):
 		print "Test Echo"
-		self.ghandler.SetPin(value=True)
-		time.sleep(.5)
-		self.ghandler.SetPin(value=False)
-		time.sleep(.5)
-		self.ghandler.SetPin(value=True)
-		time.sleep(.5)
-		self.ghandler.SetPin(value=False)
-		time.sleep(.5)
-
-		self.ghandler.SetPin(value=True)
-		time.sleep(.5)
-		self.ghandler.SetPin(value=False)
-		time.sleep(.5)
-		self.ghandler.SetPin(value=True)
-		time.sleep(1)
-		self.ghandler.SetPin(value=False)
+		self.dip(.2)
+		self.dip(.2)
+		self.dip(.2)
+		self.dip(.5)
+		self.dip(1)
