@@ -1,7 +1,7 @@
 import sys,os
 from pymongo import MongoClient
 import importlib
-import LampHandler
+import SwitchHandler
 import CameraHandler
 from pprint import pprint
 
