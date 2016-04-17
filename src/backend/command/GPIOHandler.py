@@ -20,7 +20,7 @@ class GPIOHandler(object):
 				if gpio_setup=="in":
 					gpio.setup(int(i),gpio.IN,pull_up_down=pull_up_down)
 				else:
-					gpio.setup(int(i),gpio.OUT,pull_up_down=pull_up_down)
+					gpio.setup(i,gpio.OUT,pull_up_down=pull_up_down)
 
 	def Add_Event_Handler(self,gpiosetup,bounce_time,callback,pin=None):
 		if (pin != None) & (self.pins == None):
