@@ -34,7 +34,7 @@ class MotionSensor(object):
 			self.buzzerHandler.echo()
 			if len(self.callback) > 0:
 				for call in self.callback:
-					call()
+					pprint(call)
 
 	def Execute(self):
 			try:
