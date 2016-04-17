@@ -36,8 +36,8 @@ class SwitchHandler(CommandBase):
 
 	def echo(self):
 		print "Test Echo"
-		self.dip(.2)
-		self.dip(.2)
-		self.dip(.2)
-		self.dip(.5)
-		self.dip(1)
+		dip(.2)
+		dip(.2)
+		dip(.2)
+		dip(.5)
+		dip(1)
