@@ -46,6 +46,7 @@ class MotionSensor(object):
 
 	def AddCallback(self,callback):
 		self.callback[self.counter] = callback
+		pprint(self.callback[self.counter])
 		self.counter += 1
 
 	def test(self):
