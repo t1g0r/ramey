@@ -15,7 +15,7 @@ class MotionSensor(object):
 		self.callback = {}
 		self.counter = 0
 		self.params = {}
-		self.Pin = config["pin"]
+		self.Pin = config["pin"].split(",")
 		self.dbconn = config["dbconn"]
 		self.params["gpio_setup"] = "in"
 		self.ghandler = GPIOHandler(self.Pin,self.params,gpio.PUD_DOWN)
