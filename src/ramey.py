@@ -22,7 +22,7 @@ db = client.ramey
 cfg["pin"] = Parameter.getValue(db,"sensor_motion")
 cfg["dbconn"] = db
 motion = MotionSensor(cfg)
-# utils.newThread(motion.Execute)
+utils.newThread(motion.Execute)
 
 cfg["name"] = "telegram"
 bot = ryTelegramGw(cfg,db,motion)
