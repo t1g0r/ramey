@@ -25,5 +25,5 @@ motion = MotionSensor(cfg)
 # utils.newThread(motion.Execute)
 
 cfg["name"] = "telegram"
-bot = ryTelegramGw(cfg,db,sensor=motion)
+bot = ryTelegramGw(cfg,db,motion)
 bot.connect()
