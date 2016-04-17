@@ -25,7 +25,7 @@ class MotionSensor(object):
 
 		buzzerpin = Parameter.getValuebyFieldname(self.dbconn,"sensor_motion","buzzer")
 		# print buzzerpin
-		self.params["gpio_setup"] = "out"
+		self.params["gpio_setup"] = "in"
 		pprint(buzzerpin.split(","))
 		self.buzzerHandler = GPIOHandler(buzzerpin.split(","),self.params)
 
