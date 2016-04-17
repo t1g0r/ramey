@@ -26,7 +26,6 @@ class MotionSensor(object):
 		buzzerpin = Parameter.getValuebyFieldname(self.dbconn,"sensor_motion","buzzer")
 		# print buzzerpin
 		self.params["gpio_setup"] = "out"
-		pprint(buzzerpin.split(","))
 		self.buzzerHandler = GPIOHandler(buzzerpin.split(","),self.params)
 
 	def OnMotion(self,channel):
@@ -46,7 +45,6 @@ class MotionSensor(object):
 
 	def AddCallback(self,callback):
 		self.callback[self.counter] = callback
-		pprint(self.callback[self.counter])
 		self.counter += 1
 
 	def test(self):
