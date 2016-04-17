@@ -25,4 +25,4 @@ try:
 except KeyboardInterrupt, e:
 	gpio.cleanup()
 	print "All cleaned up"
-	raise e:
+	raise e
