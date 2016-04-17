@@ -25,5 +25,5 @@ db = client.ramey
 # utils.newThread(motion.Execute)
 
 cfg["name"] = "telegram"
-bot = ryTelegramGw(config=cfg,dbconn=db,sensor=motion)
+bot = ryTelegramGw(cfg,db,sensor=motion)
 bot.connect()
