@@ -18,7 +18,7 @@ class MotionSensor(object):
 		self.Pin = config["pin"]
 		self.dbconn = config["dbconn"]
 		self.params["gpio_setup"] = "in"
-		self.ghandler = GPIOHandler([self.Pin],self.params,gpio.PUD_DOWN)
+		self.ghandler = GPIOHandler(self.Pin.split(","),self.params,gpio.PUD_DOWN)
 
 		self.ghandler.Add_Event_Handler(pin=self.Pin,gpiosetup=gpio.BOTH,callback=self.OnMotion,bounce_time=50)
 
