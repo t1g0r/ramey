@@ -18,7 +18,7 @@ client = MongoClient()
 db = client.ramey
 
 
-config = {}
+# config = {}
 config["pin"] = Parameter.getValue(db,"sensor_motion")
 config["dbconn"] = db
 motion = MotionSensor(config)
