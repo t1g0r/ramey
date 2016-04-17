@@ -11,7 +11,7 @@ class MotionSensor(object):
 	"""docstring for MotionSensor"""
 	def __init__(self, config):
 		super(MotionSensor, self).__init__()
-		self.active = False		
+		self.active = True		
 		self.config = config
 		self.callback = {}
 		self.counter = 0
