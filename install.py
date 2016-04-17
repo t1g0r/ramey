@@ -50,25 +50,25 @@ db.commandmapper.insert([
 		"gpios":"1"
 	},
 	{
-		"_id":"hidupkanlampu",
-		"commandkey":"hidupkanlampu",
-		"commandname":"Hidupkan Lampu",
-		"class_ref":"LampHandler.hidupkanlampu",
-		"gpios":"1"
+    "_id" : "hidupkanlampu",
+    "gpios" : "6,22",
+    "commandkey" : "hidupkanlampu",
+    "commandname" : "Hidupkan Lampu",
+    "class_ref" : "SwitchHandler.switchon"
 	},
 	{
-		"_id":"matikanlampu",
-		"commandkey":"matikanlampu",
-		"commandname":"Matikan Lampu",
-		"class_ref":"LampHandler.matikanlampu",
-		"gpios":"1"
+    "_id" : "matikanlampu",
+    "gpios" : "6,22",
+    "commandkey" : "matikanlampu",
+    "commandname" : "Matikan Lampu",
+    "class_ref" : "SwitchHandler.switchoff"
 	},
 	{
-		"_id":"bunyikanbuzzer",
-		"commandkey":"bunyikanbuzzer",
-		"commandname":"Bunyikan Buzzer",
-		"class_ref":"BuzzerHandler.bunyikanbuzzer",
-		"gpios":"3"
+    "_id" : "bunyikanbuzzer",
+    "gpios" : "5,25",
+    "commandkey" : "bunyikanbuzzer",
+    "commandname" : "Bunyikan Buzzer",
+    "class_ref" : "SwitchHandler.echo"
 	},
 	{
 		"_id":"fotodong",
@@ -89,20 +89,20 @@ db.commandmapper.insert([
 		"class_ref":"CardHandler.lepasid"
 	},
 	{
-		"_id":"hidupkansensor",
-		"commandkey":"hidupkansensor",
-		"commandname":"Hidupkan Sensor",		
-    "gpios":"20",
-    "buzzer":"25",
-		"class_ref":"MotionHandler.hidupkansensor"
+    "_id" : "hidupkansensor",
+    "commandkey" : "hidupkansensor",
+    "commandname" : "Hidupkan Sensor",
+    "gpios" : "20",
+    "buzzer" : "25",
+    "class_ref" : "SensorHandler.switchon"
 	},
 	{
-		"_id":"matikansensor",
-		"commandkey":"matikansensor",
-		"commandname":"Matikan Sensor",		
-    "gpios":"20",
-    "buzzer":"25",
-		"class_ref":"MotionHandler.matikansensor"
+    "_id" : "matikansensor",
+    "commandkey" : "matikansensor",
+    "commandname" : "Matikan Sensor",
+    "gpios" : "20",
+    "buzzer" : "25",
+    "class_ref" : "SensorHandler.switchoff"
 	},
 	{
 		"_id":"ceksemua",
@@ -118,6 +118,16 @@ db.params.insert([
 	{
 		"_id":"needauth",
 		"value":1
+	},
+	{
+    "_id" : "sensor_motion",
+    "value" : "20",
+    "buzzer" : "22,25",
+    "active" : true
+	},
+	{
+    "_id" : "alarm_message",
+    "value" : "Ada gerakan terdeteksi!"
 	}
 	])
 
