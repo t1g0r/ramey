@@ -6,8 +6,8 @@ import time
 
 class SensorHandler(CommandBase):
 	"""docstring for SensorHandler"""
-	def __init__(self, *arg):
-		super(SensorHandler, self).__init__()
+	def __init__(self, *args):
+		super(SensorHandler, self).__init__(*args)
 		# self.arg = arg
 
 	def execute(self):
