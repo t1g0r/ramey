@@ -2,7 +2,7 @@ import sys
 sys.path.append("backend/command/")
 import time
 from GPIOHandler import GPIOHandler
-import Rpi.GPIO as gpio
+import RPi.GPIO as gpio
 from utils import Parameter
 
 
