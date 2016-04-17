@@ -10,7 +10,7 @@ class LampHandler(CommandBase):
 		super(LampHandler, self).__init__(*args)
 		params = {}
 		params["gpio_setup"] = "out"
-		# self.ghandler = GPIOHandler(self.Pins,params)
+		self.ghandler = GPIOHandler(self.Pins,params)
 		
 		
 
