@@ -32,5 +32,18 @@ class SwitchHandler(CommandBase):
 	def echo(self):
 		print "Test Echo"
 		self.ghandler.SetPin(value=True)
-		time.sleep(2)
+		time.sleep(.5)
+		self.ghandler.SetPin(value=False)
+		time.sleep(.5)
+		self.ghandler.SetPin(value=True)
+		time.sleep(1)
+		self.ghandler.SetPin(value=False)
+		time.sleep(.5)
+
+		self.ghandler.SetPin(value=True)
+		time.sleep(.5)
+		self.ghandler.SetPin(value=False)
+		time.sleep(.5)
+		self.ghandler.SetPin(value=True)
+		time.sleep(1)
 		self.ghandler.SetPin(value=False)
