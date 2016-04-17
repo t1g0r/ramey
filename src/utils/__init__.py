@@ -12,12 +12,14 @@ class Parameter(object):
 			else:
 				return ""
 
+		@staticmethod
 		def getValuebyFieldname(dbconn,key,fieldname):
-			cdata = dbconn.params.find({"_id":"%s"%key})
-			if cdata.count() > 0:
-				return cdata[0][fieldname]
-			else:
-				return ""
+			cdata = dbconn.params.find_one({"_id":"%s"%key})
+			return cdata.get(fieldname,"")
+			# if cdata.count() > 0:
+			# 	return cdata[fieldname]
+			# else:
+			# 	return ""
 
 def newThread(f,args=()):
 		t = threading.Thread(target=f,args=args)

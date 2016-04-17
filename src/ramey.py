@@ -18,7 +18,7 @@ client = MongoClient()
 db = client.ramey
 
 
-print Parameter.getValue(db,"sensor_motion")
+print Parameter.getValuebyFieldname(db,"sensor_motion","buzzer")
 config = {}
 config["pin"] = Parameter.getValue(db,"sensor_motion")
 config["dbconn"] = db
