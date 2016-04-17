@@ -17,8 +17,8 @@ class CommandHandler(object):
 		self.params["callback2"] = command["sendphoto"] #callback2
 		self.params["command"] = self.command
 
-		self.callback = callback
-		self.callback2 = callback2
+		# self.callback = callback
+		# self.callback2 = callback2
 
 		# self.callbacks = [self.callback,self.callback2]
 		
