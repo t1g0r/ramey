@@ -16,6 +16,8 @@ class CommandHandler(object):
 		self.params["callback"] = command["sendmessage"] #callback
 		self.params["callback2"] = command["sendphoto"] #callback2
 		self.params["command"] = self.command
+		self.AppConfig = self.command["AppConfig"]
+		pprint(self.AppConfig)
 
 		# self.callback = callback
 		# self.callback2 = callback2
