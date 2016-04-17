@@ -22,6 +22,7 @@ try:
 	while True:
 		time.sleep(1)
 
-finally:
+except KeyboardInterrupt, e:
 	gpio.cleanup()
 	print "All cleaned up"
+	raise e:
