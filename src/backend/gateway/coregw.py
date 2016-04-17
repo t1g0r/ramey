@@ -5,6 +5,7 @@ from command import Handler
 from pymongo import MongoClient
 import datetime
 from pprint import pprint
+from utils import Parameter
 
 
 # sys.path.append(os.path.join(os.path.dirname(__file__), '..','..'))
@@ -46,7 +47,7 @@ class ryCoreGateway(object):
 		for user in users:
 			users_account = self.dbconn.users_account.find({"type":"%s" % self.name,"userid":{"$in":[user["userid"]]}})
 			for account in users_account:
-				self.sendMessage(account["account_id"], "test message")
+				self.sendMessage(account["account_id"], Parameter.getValue(self.dbconn,"alarm_message"))
 
 	def onMessage(self,params):
 		# print "=================PARAMS================="
