@@ -36,7 +36,7 @@ class SwitchHandler(CommandBase):
 		self.ghandler.SetPin(value=False)
 		time.sleep(.5)
 		self.ghandler.SetPin(value=True)
-		time.sleep(1)
+		time.sleep(.5)
 		self.ghandler.SetPin(value=False)
 		time.sleep(.5)
 
