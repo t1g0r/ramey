@@ -4,7 +4,7 @@ from pprint import pprint
 from GPIOHandler import GPIOHandler
 
 
-class LampHandler(CommandBase):
+class SwitchHandler(CommandBase):
 	"""docstring for LampHandler"""
 	def __init__(self, *args):
 		super(LampHandler, self).__init__(*args)
@@ -19,11 +19,11 @@ class LampHandler(CommandBase):
 		method = getattr(self,self.params["method"])
 		method()
 
-	def hidupkanlampu(self):
+	def switchon(self):
 		print "hidupkan lampu"
 		self.ghandler.SetPin(value=True)
 
 
-	def matikanlampu(self):
+	def switchoff(self):
 		print "matikan lampu"
 		self.ghandler.SetPin(value=False)

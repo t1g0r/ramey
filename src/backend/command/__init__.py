@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from LampHandler import LampHandler
+from SwitchHandler import SwitchHandler
 from CameraHandler import CameraHandler
 from CommandBase import CommandBase
 from CommandHandler import CommandHandler as Handler
