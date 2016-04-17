@@ -15,7 +15,7 @@ class Parameter(object):
 		def getValuebyFieldname(dbconn,key,fieldname):
 			cdata = dbconn.params.find({"_id":"%s"%key})
 			if cdata.count() > 0:
-				return cdata[0]["fieldname"]
+				return cdata[0][fieldname]
 			else:
 				return ""
 
