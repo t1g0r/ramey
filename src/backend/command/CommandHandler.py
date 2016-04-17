@@ -18,8 +18,8 @@ class CommandHandler(object):
 		self.params["command"] = self.command
 		self.AppConfig = self.command["AppConfig"]
 
-		# self.callback = callback
-		# self.callback2 = callback2
+		self.callback = self.params["callback"]
+		self.callback2 = self.params["callback2"]
 
 		# self.callbacks = [self.callback,self.callback2]
 		
@@ -35,7 +35,7 @@ class CommandHandler(object):
 		#if commmand is not found, then send response
 		if cCommand.count() > 0:
 			cCommand = cCommand[0]
-			self.params["callback"](self.command["account_id"],"hii %s, you just sent command name : '%s' and this is callback!" % (self.command["fullname"],cCommand["commandname"]))
+			self.callback(self.command["account_id"],"hii %s, you just sent command name : '%s' and this is callback!" % (self.command["fullname"],cCommand["commandname"]))
 
 			try:
 				#execute command
